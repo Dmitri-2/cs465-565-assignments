@@ -63,7 +63,9 @@ typings/
 
 # Webstorm 
 .idea
+.DS_Store
 
 #VS Code 
 .vscode/
+
 
