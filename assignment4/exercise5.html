@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="text-center mt-5">
+        <h1> Button will set background to random color. </h1>
+        <br>
+        <button id="changeBackgroundBtn" class="btn btn-primary btn-lg"> Change Background </button>
+    </div>
+</div>
+</body>
+
+</html>
+
+<script>
+    //Sorry, I know this function is horrible...
+    function generateRandomHex() {
+        let randomNumber = Math.floor(Math.random()*16);
+        let char = "";
+
+        if(randomNumber < 10){
+            return randomNumber.toString();
+        } else {
+            switch(randomNumber){
+                case 10:
+                    return "a";
+                    break;
+                case 11:
+                    return "b";
+                    break;
+                case 12:
+                    return "c";
+                    break;
+                case 13:
+                    return "d";
+                    break;
+                case 14:
+                    return "e";
+                    break;
+                case 15:
+                    return "f";
+                    break;
+            }
+        }
+    }
+
+    function generateRandomHexColor() {
+        let hexColor = [];
+        for (var x=0; x<6; x++){
+            hexColor.push(generateRandomHex())
+        }
+        return "#"+hexColor.join("");
+    }
+
+    $("#changeBackgroundBtn").click(function () {
+        $("body").css("background", generateRandomHexColor());
+    })
+
+</script>

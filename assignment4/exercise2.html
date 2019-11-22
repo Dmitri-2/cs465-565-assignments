@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--write a function that reverses the digits in a number. Print output to the console.-->
+<!--input: 231756-->
+<!--output: 657132-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="text-center mt-5">
+        <h1> Exercise #2 </h1>
+        <h3> See console for output...</h3>
+    </div>
+</div>
+</body>
+
+</html>
+
+<script>
+    function reverseDigits(number) {
+        let numberAsStringArray = number.toString().split("");
+        return numberAsStringArray.reverse().join("");
+    }
+
+    console.log(reverseDigits(231756));
+
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--For  exercise1.html : FizzBuzz. Write a program that uses console.-->
+<!--Log to print all the numbers from 1 to 100, with some exceptions. -->
+<!--For numbers divisible by 3, print “fizz” and for numbers divisible by 5 (but not 3), -->
+<!--print “buzz. For numbers divisible by 3 and 5, print “fizzbuzz.”-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center mt-5">
+            <h1> Exercise #1 </h1>
+            <h3> This is a JS exercise. See console for output...</h3>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    for(var x=1; x<101; x++){
+
+        var fizz = (x%3 === 0);
+        var buzz = (x%5 === 0);
+
+        if(fizz && buzz)
+            console.log("fizzbuzz");
+        else if(fizz)
+            console.log("fizz");
+        else if(buzz)
+            console.log("buzz");
+        else
+            console.log(x);
+    }
+
+</script>
