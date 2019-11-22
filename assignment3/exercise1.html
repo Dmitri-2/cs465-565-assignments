@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Web Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body class="d-flex justify-content-center">
+    <div class="d-flex align-items-center">
+        <form method="POST" class="contact-form border rounded shadow-lg">
+            <h3 class="text-center">CONTACT US</h3>
+            <div class="form-group">
+                <label for="firstName" class="text"> First Name </label>
+                <input id="firstName" placeholder="First Name" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="lastName"> Last Name </label>
+                <input id="lastName" type="text" placeholder="Last Name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email"> E-mail</label>
+                <input id="email" type="text" placeholder="E-Mail" class="form-control">
+            </div>
+            <div class="radio-btn-input mt-4">
+                <input type="radio" id="undergrad" name="studentType" value="undergrad" checked>
+                <label for="undergrad">Undergraduate Student</label>
+            </div>
+            <div class="radio-btn-input">
+                <input type="radio" id="grad" name="studentType" value="grad">
+                <label for="grad">Graduate Student</label>
+            </div>
+            <div class="form-group mt-3">
+                <label for="email"> Comments </label>
+                <textarea id="comments" type="text" class="form-control"> </textarea>
+            </div>
+            <br>
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="Submit" class="btn btn-primary">
+                <input type="button" value="Reset" class="btn btn-secondary">
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    .contact-form {
+        width: 350px;
+        padding: 25px;
+    }
+</style>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Layout #2-->
+<!--DONE USING GRID -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Layout 2</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mx-auto grid-container">
+            <div class="grid">
+                <div class="grid-block"> One </div>
+                <div class="grid-block"> Two </div>
+                <div class="grid-block"> Three </div>
+                <div class="grid-block"> Four </div>
+                <div class="grid-block"> Five </div>
+                <div class="grid-block"> Six </div>
+            </div>
+            <div class="grid-block last-item"> Seven </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    .grid-container{
+        width: fit-content;
+        margin-top: 50px;
+    }
+    
+    .grid{
+        display: grid;
+        grid-template-columns: 300px 600px;
+        grid-template-rows: 65px 65px 65px;
+    }
+    
+    .grid-block{
+        background-color: dimgrey;
+        color: white;
+        border-radius: 10px;
+        border: 5px white solid;
+        padding: 15px;
+    }
+    .last-item{
+        width: 900px;
+        padding: 15px;
+    }
+</style>

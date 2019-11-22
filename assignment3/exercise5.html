@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Layout #3 -->
+<!--Using FLEX Layout -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout 3</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-section">
+        <div class="line-block"> One </div>
+        <div class="bottom-block">
+            <div class="bottom-left">
+                <div class="line-block"> Two </div>
+
+            </div>
+
+            <div class="bottom-right">
+                <div class="line-block"> Three </div>
+
+                <div class="bottom-bottom">
+
+                    <div class="line-block"> Four </div>
+                    <div class="line-block"> Five </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    .main-section {
+        width: 800px;
+        padding: 25px;
+        margin: auto;
+    }
+    
+    .bottom-block{
+        display: flex;
+    }
+
+    .bottom-left{
+        width: 400px;
+    }
+    .bottom-left > div {
+        height: 140px;
+    }
+
+    .bottom-right{
+        width: 400px;
+    }
+
+    .bottom-bottom{
+        justify-content: space-between;
+        display: flex;
+        height: 50px;
+    }
+
+    .bottom-bottom > div {
+        width: 160px;
+    }
+
+    .line-block{
+        background-color: dimgrey;
+        color: white;
+        border-radius: 10px;
+        border: 5px white solid;
+        padding: 15px;
+        min-height: 50px;
+    }
+
+    .inline-block{
+        display: inline-block;
+    }
+</style>

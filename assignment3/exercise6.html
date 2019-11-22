@@ -1,0 +1,68 @@
+<html lang="en">
+
+<!--Layout #4 -->
+<!--Using Bootstrap Grid Layout -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout 4</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row first-row">
+            <div class="col-md-6">
+                <div class="block one"> One </div>
+            </div>
+            <div class="col-md-6">
+                <div class="block two"> Two </div>
+                <div class="block"> Three </div>
+                <div class="block"> Four </div>
+            </div>
+
+        </div>
+        <div class="row d-inline">
+            <div class="block"> Five </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<style>
+    .container{
+        max-width: 850px;
+    }
+
+    .one{
+        height: 328px;
+    }
+
+    .two{
+        height: 200px;
+    }
+
+    .first-row{
+        padding: 0 15px;
+    }
+
+    .col-md-6{
+        padding: 0px;
+    }
+
+    .block{
+        background-color: dimgrey;
+        color: white;
+        border-radius: 10px;
+        border: 5px white solid;
+        padding: 15px;
+        min-height: 50px;
+    }
+
+</style>

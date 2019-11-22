@@ -1,0 +1,56 @@
+<html lang="en">
+
+<!--Layout #5 -->
+<!--Using Inline-Block Layout -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout 5</title>
+</head>
+
+<body>
+<div class="main">
+    <div class="block"> One </div>
+    <div class="middle-block">
+        <span class="block two"> Two </span>
+        <span class="block three"> Three </span>
+    </div>
+    <div class="block"> Four </div>
+</div>
+</body>
+
+</html>
+
+<style>
+    .main{
+        width: fit-content;
+        margin: 50px auto;
+        min-width: 800px;
+    }
+
+    .two{
+        width: 75px;
+        height: 200px;
+    }
+
+    .three{
+        width: 80%;
+        height: 200px;
+    }
+
+    .middle-block > *{
+        display: inline-block;
+    }
+
+    .block{
+        background-color: dimgrey;
+        color: white;
+        border-radius: 10px;
+        border: 5px white solid;
+        padding: 15px;
+        min-height: 40px;
+    }
+
+</style>
