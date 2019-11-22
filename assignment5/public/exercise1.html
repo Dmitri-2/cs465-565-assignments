@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Web Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body class="d-flex justify-content-center">
+<div class="d-flex align-items-center mt-5">
+    <form method="POST" class="contact-form border rounded shadow-lg" action="/submit">
+        <h3 class="text-center">CONTACT US</h3>
+        <div class="form-group">
+            <label for="firstName" class="text"> First Name </label>
+            <input name="firstName" id="firstName" placeholder="First Name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="lastName"> Last Name </label>
+            <input name="lastName" id="lastName" type="text" placeholder="Last Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email"> E-mail</label>
+            <input name="email" id="email" type="text" placeholder="E-Mail" class="form-control">
+        </div>
+        <div class="form-group mt-3">
+            <label for="comments"> Comments </label>
+            <textarea name="comments" id="comments" type="text" class="form-control"> </textarea>
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+            <input id="submitBtn" type="submit" value="Submit" class="btn btn-primary">
+            <input id="resetBtn" type="button" value="Reset" class="btn btn-secondary">
+        </div>
+
+    </form>
+</div
+
+</body>
+
+</html>
+
+<script>
+    let firstName = $("#firstName");
+    let lastName = $("#lastName");
+    let email = $("#email");
+    let comments = $("#comments");
+
+    $("#submitBtn").click( function (event) {
+        console.log("Name: "+firstName.val()+" "+lastName.val());
+        console.log("Email: "+email.val());
+        console.log("Message: "+comments.val());
+    });
+
+    $("#resetBtn").click( function (event) {
+        firstName.val("");
+        lastName.val("");
+        email.val("");
+        comments.val("");
+    });
+
+</script>
+
+
+<style>
+    .contact-form {
+        width: 350px;
+        padding: 25px;
+    }
+</style>
