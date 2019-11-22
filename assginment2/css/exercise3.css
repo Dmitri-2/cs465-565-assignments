@@ -8,109 +8,43 @@ img {
     border-radius: 5px;
 }
 
-
-.main-nav{
+.top-section{
     display: flex;
 }
 
-.footer{
-    display: flex;
+.w-50{
+    width: 50%;
 }
 
-.footer-section{
-    padding:20px;
-    width: 200px;
-    background: #b2d8f8;
-    margin: 5px;
-}
-
-.footer-header {
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 0;
+.text-center {
     text-align: center;
 }
 
-.footer-list{
-    width: 200px;
-    margin-left: auto;
+.large-font{
+    font-size: 42px;
 }
 
-.section{
-    padding: 75px;
+.padding-10{
+    padding: 10px;
 }
 
-.main-nav-link-wrapper{
-    padding:10px;
+.padding-30{
+    padding: 30px;
 }
 
-.first-main-nav-link{
-    margin-left:200px;
+.margin-25per {
+    margin: 0 25%;
 }
 
-.align-right{
-    margin-left: auto;
-    margin-right: 0;
+section{
+    background: #f1f1f1;
+    box-shadow: black 5px 5px 15px 0px;
 }
 
-
-
-.bold{
-    font-weight: 800;
+.mr-10px{
+    margin-right: 10px;
 }
 
-.large-header {
-    font-size: 50px;
-}
-
-.text-20{
-    font-size:20px;
-}
-
-.text-15{
-    font-size:15px;
-}
-
-.text-center{
-    text-align: center;
-}
-
-.pink-background{
-    background: linear-gradient(50deg, #ffd5d5, transparent);
-}
-
-.green-background{
-    background: linear-gradient(-5deg, #95d66b, transparent);
-}
-
-.yellow-background{
-    background: linear-gradient(45deg, #ffe649, transparent);
-}
-
-.email-input{
-    padding:25px;
-    border: 1px black solid;
-    border-radius: 5px;
-}
-
-.email-submit-btn{
-    padding:25px;
-    /*border: 1px rgba(0, 0, 0, 0.63) solid;*/
-    border-radius: 5px;
-    background: #8545a4;
-    color: white;;
-}
-
-footer {
-    padding: 20px;
-}
-
-.footer-link{
-    margin: 10px 0 20px 30px;
-    display: block;
-}
-
-.main-footer-div {
-    display: flex;
-    justify-content: space-between;
+.bottom-space{
+    margin-bottom: 20px;
 }

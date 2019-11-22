@@ -1,0 +1,43 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Simple Web Form</title>
+        <link href="css/exercise1.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <form method="POST">
+            <h3 class="centered">CONTACT US</h3>
+            <!--<label for="firstName" class="text"> First Name: </label>-->
+            <input id="firstName" placeholder="First Name" class="full-width text-input" type="text">
+            <br> <br>
+            <!--<label for="lastName"> Last Name: </label>-->
+            <input id="lastName" type="text" placeholder="Last Name" class="full-width text-input">
+            <br> <br>
+            <!--<label for="email"> E-mail:</label>-->
+            <input id="email" type="text" placeholder="E-Mail" class="full-width text-input">
+
+            <br> <br>
+            <div class="radio-btn-input">
+                <input type="radio" id="undergrad" name="studentType" value="undergrad" checked>
+                <label for="undergrad">Undergraduate Student</label>
+            </div>
+            <div class="radio-btn-input">
+                <input type="radio" id="grad" name="studentType" value="grad">
+                <label for="grad">Graduate Student</label>
+            </div>
+
+            <br>
+            <div class="form-button-group">
+                <input type="submit" value="SUBMIT" class="form-button">
+                <input type="button" value="RESET" class="form-button">
+            </div>
+
+        </form>
+    </body>
+
+</html>

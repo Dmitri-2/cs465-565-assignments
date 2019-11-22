@@ -19,9 +19,9 @@ img {
 
 .footer-section{
     padding:20px;
-    width: 300px;
+    width: 200px;
     background: #b2d8f8;
-    margin: auto;
+    margin: 5px;
 }
 
 .footer-header {
@@ -101,3 +101,16 @@ img {
     color: white;;
 }
 
+footer {
+    padding: 20px;
+}
+
+.footer-link{
+    margin: 10px 0 20px 30px;
+    display: block;
+}
+
+.main-footer-div {
+    display: flex;
+    justify-content: space-between;
+}
