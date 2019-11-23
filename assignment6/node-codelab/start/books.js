@@ -13,29 +13,88 @@
 
 var url = require('url');
 
-module.exports = function(config) {
+module.exports = function (config) {
+
+  var gcloud = require('google-cloud');
+
+  var datastore = gcloud.datastore({
+    projectId: config.projectId,
+    keyFilename: config.keyFilename
+  });
+
+  var storage = gcloud.storage({
+    projectId: config.projectId,
+    keyFilename: config.keyFilename
+  });
+
+  var bucket = storage.bucket(config.bucketName);
 
   function getAllBooks(callback) {
-    var error = null;
-    var books = [
-      { id: 12345, title: 'Fake Book', author: 'Fake Author' }
-    ];
-    callback(error, books);
+    var query = datastore.createQuery(['Book']);
+    datastore.runQuery(query, (err, books) => callback(err, books, datastore.KEY));
   }
 
   function getUserBooks(userId, callback) {
-    callback(new Error('books.getUserBooks [Not Yet Implemented]'));
+    var query = datastore.createQuery(['Book']).filter('userId', '=', userId);
+    datastore.runQuery(query, (err, books) => callback(err, books, datastore.KEY));
   }
 
   function addBook(title, author, coverImageData, userId, callback) {
-    if (coverImageData)
-      return callback(new Error('books.addBook with image [Not Yet Implemented]'));
+    var entity = {
+      key: datastore.key('Book'),
+      data: {
+        title: title,
+        author: author
+      }
+    };
 
-    return callback(new Error('books.addBook [Not Yet Implemented]'));
+    if (userId)
+      entity.data.userId = userId;
+
+    if (coverImageData)
+      uploadCoverImage(coverImageData, function (err, imageUrl) {
+        if (err) return callback(err);
+        entity.data.imageUrl = imageUrl;
+        datastore.save(entity, callback);
+      });
+    else
+      datastore.save(entity, callback);
   }
 
   function deleteBook(bookId, callback) {
-    callback(new Error('books.deleteBook [Not Yet Implemented]'));
+    var key = datastore.key(['Book', parseInt(bookId, 10)]);
+
+    datastore.get(key, function (err, book) {
+      if (err) return callback(err);
+
+      if (book.imageUrl) {
+        var filename = url.parse(book.imageUrl).path.replace('/', '');
+        var file = bucket.file(filename);
+        file.delete(function (err) {
+          if (err) return callback(err);
+          datastore.delete(key, callback);
+        });
+      } else {
+        datastore.delete(key, callback);
+      }
+    });
+  }
+
+  function uploadCoverImage(coverImageData, callback) {
+    // Generate a unique filename for this image
+    var filename = '' + new Date().getTime() + "-" + Math.random();
+    var file = bucket.file(filename);
+    var imageUrl = 'https://' + config.bucketName + '.storage.googleapis.com/' + filename;
+    var stream = file.createWriteStream();
+    stream.on('error', callback);
+    stream.on('finish', function () {
+      // Set this file to be publicly readable
+      file.makePublic(function (err) {
+        if (err) return callback(err);
+        callback(null, imageUrl);
+      });
+    });
+    stream.end(coverImageData);
   }
 
   return {
